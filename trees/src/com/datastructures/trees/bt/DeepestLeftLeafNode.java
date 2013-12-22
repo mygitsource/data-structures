@@ -4,25 +4,23 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import com.datastructures.trees.Node;
-import com.datastructures.trees.util.StaticTrees;
+import com.datastructures.trees.util.UtilTrees;
 
 public class DeepestLeftLeafNode {
 	
-	//private static Node value = null;
-	
 	public static void main(String[] args) {
 		inorderTraversalMethod();
+		
+		//levelorder traversal is not finished.
 		//levelOrderTraversalMethod();
 		
 	}
 	
 	private static void levelOrderTraversalMethod(){
-		Node node = StaticTrees.getBinaryTree1();
+		Node node = UtilTrees.getBinaryTree1();
 		int level = 0;
 		int maxLevel = 0;
-//		Node leftLeafNode = null;
-		//levelOrderTraversalMethod(node);
-		inorderTraversalMethod();
+		levelOrderTraversalMethod(node);
 		//System.out.println("DeepestLeftLeafNode : "+value.getData());
 	}
 	
@@ -32,6 +30,7 @@ public class DeepestLeftLeafNode {
 	 * the node is left/right at the time of processing.
 	 */
 	
+	//XXX: levelorder traversal is not finished.
 	private static Node levelOrderTraversalMethod(Node node){
 		int level = 0;
 		int maxLevel = 0;
@@ -39,18 +38,20 @@ public class DeepestLeftLeafNode {
 		if(node == null) return null;
 		Queue<Node> queue = new LinkedList<>();
 		queue.add(node);
-		queue.add(StaticTrees.dummy);
+		queue.add(null);
 		while(!queue.isEmpty()){
 			Node temp = queue.poll();
 			//System.out.println(temp.getData());
-			if(temp.getData() == -9999){
+			if(temp == null){
+				//increment level , when temp.data == null, which was inserted as end of level.
 				level++;
 				if(!queue.isEmpty())
-					queue.add(StaticTrees.dummy);
+					queue.add(null);
 			}else{
 				if(temp.getLeft() != null){
 					queue.add(temp.getLeft());
 				}else if(temp.getRight() == null){
+					//when right is null check the level and keep the node value. 
 					if(level >= maxLevel){
 						maxLevel = level;
 						value = temp.getData();
@@ -66,12 +67,15 @@ public class DeepestLeftLeafNode {
 		return null;
 	}
 	
+	
+	
+	
+	
 	private static void inorderTraversalMethod(){
-		Node node = StaticTrees.getBinaryTree1();
+		Node node = UtilTrees.getBinaryTree1();
 		int level = 0;
 		int maxLevel = 0;
-		Node value;
-		value = inorderTraversalMethod(node, false, level, maxLevel);
+		Node value = inorderTraversalMethod(node, false, level, maxLevel);
 		System.out.println("DeepestLeftLeafNode : "+value.getData());
 	}
 	

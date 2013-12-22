@@ -1,7 +1,8 @@
 package com.datastructures.trees.bt;
 
 import com.datastructures.trees.Node;
-import com.datastructures.trees.util.StaticTrees;
+import com.datastructures.trees.Traversal;
+import com.datastructures.trees.util.UtilTrees;
 import com.datastructures.trees.util.Util;
 
 /**
@@ -13,31 +14,33 @@ import com.datastructures.trees.util.Util;
  * So we have to delete it only in case when all paths from it have sum less than K.
  *
  */
-//TODO: not finished
 public class BinaryTreeSumAndDeleteLeaf {
 	
 	public static Node sumAndDelete(Node root, int k, int sum){
-		if(root == null) return null;
+		if(root == null) return root;
 		int lsum = sum + root.getData();
 		int rsum = lsum;
+		
 		root.setLeft(sumAndDelete(root.getLeft(), k, lsum));
 		root.setRight(sumAndDelete(root.getRight(), k, rsum));
-		
+
 		sum = (lsum > rsum?rsum:lsum);
-		if(sum < k){
+		if(root.getLeft() == null && root.getRight()== null && sum < k){
+//			System.err.println("S: "+sum+" "+root.getData());
 			root = null;
 		}
 		return root;
 	}
 	
 	public static void main(String[] args) {
-		int k =20;
+		int k = 20; //20;
 		int sum = 0;
-		Node root = StaticTrees.getBinaryTree3();
-		Util.printInorderTraversal(root);
-		System.err.println("********");
+		Node root = UtilTrees.getBinaryTree3();
+		//Util.printInorderTraversal(root);
+		System.out.println("********");
 		Node node1 = sumAndDelete(root, k, sum);
-		Util.printInorderTraversal(node1);
-		System.err.println("********");
+		Util.printTree(node1, Traversal.INORDER);
+//		Util.levelOrderTraversalUsingHeight(node1);
+		System.out.println("********");
 	}
 }

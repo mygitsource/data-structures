@@ -1,19 +1,25 @@
 package com.datastructures.trees;
 
+/*
+The depth of a node is the number of edges from the node to the tree's root node.
+The height of a node is the number of nodes on the longest path from the node to a leaf.
+For example, when looking at the root node of the tree, 
+	the depth would be 0 and the height would be the number of nodes on the longest path to a leaf.
+*/
 public class Node {
 	
-	public Node(int data){
+	public Node(Integer data){
 		this.data = data;
 	}
 	
-	private int data = -1;
+	private Integer data = null;
 	private Node left;
 	private Node right;
 	
-	public int getData() {
+	public Integer getData() {
 		return data;
 	}
-	public void setData(int data) {
+	public void setData(Integer data) {
 		this.data = data;
 	}
 	public Node getLeft() {
@@ -31,6 +37,6 @@ public class Node {
 	
 	@Override
 	public String toString() {
-		return Integer.toString(data);
+		return data.toString();
 	}
 }

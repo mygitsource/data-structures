@@ -2,8 +2,7 @@ package com.datastructures.trees.util;
 
 import com.datastructures.trees.Node;
 
-public class StaticTrees {
-	public static final Node dummy = new Node(-9999);
+public class UtilTrees {
 /*	
 			      1
 			    /   \
@@ -38,6 +37,8 @@ public class StaticTrees {
 		node7.setLeft(node9);
 		node8.setRight(node10);
 		
+		Node test = new Node(100);
+		node9.setRight(test);
 		return root;
 	}
 
@@ -131,9 +132,74 @@ public class StaticTrees {
 		return node1;
 		
 	}
+
+/**	
+	 	50
+     /    	 \
+    17         76
+   / 	 \     /
+  9      23    54
+   \	  /	    \
+    14  19	     72
+    /            / 
+   12    		67
+   
+*/	
+	
+	public static Node getBinaryTree4(){
+		Node node50 = new Node(50);
+		Node node17 = new Node(17);
+		Node node9 = new Node(9);
+		Node node14 = new Node(14);
+		Node node12 = new Node(12);
+		Node node23 = new Node(23);
+		Node node19 = new Node(19);
+		Node node76 = new Node(76);
+		Node node54 = new Node(54);
+		Node node72 = new Node(72);
+		Node node67 = new Node(67);
+		
+		node50.setLeft(node17);
+		node50.setRight(node76);
+		node17.setLeft(node9);
+		node17.setRight(node23);
+		node9.setRight(node14);
+		node14.setLeft(node12);
+		node23.setLeft(node19);
+		
+		node76.setLeft(node54);
+		node54.setRight(node72);
+		node72.setLeft(node67);
+		
+		return node50;
+	}
 	
 	
+/**
+*
+		   12
+	     /    \
+	   5       7       
+	 /          \ 
+	3            1
+
+*/
 	
+	public static Node getBinaryTree5(){
+		Node node12 = new Node(12);
+		Node node5 = new Node(5);
+		Node node3 = new Node(3);
+		Node node7 = new Node(7);
+		Node node1 = new Node(1);
+
+		node12.setLeft(node5);
+		node12.setRight(node7);
+		node5.setLeft(node3);
+		node7.setRight(node1);
+
+		return node12;
+		
+	}
 	
 	
 }
