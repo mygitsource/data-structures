@@ -11,6 +11,7 @@ import com.datastructures.trees.Traversal;
 public class Util {
 	
 	public static void main(String[] args) {
+//		postOrderTraversalMethod1(UtilTrees.getBinaryTree1());	
 		postOrderTraversal(UtilTrees.getBinaryTree1());
 //		printTree(UtilTrees.getBinaryTree1(), Traversal.POSTORDER);
 	}
@@ -34,6 +35,41 @@ public class Util {
 		while (!stack2.isEmpty()) {
 			System.out.println(stack2.pop());
 		}
+	}
+	
+	/**
+	 * 1. push all the left nodes to the stack.
+	 * 2. pop the node, when the right is null, because we don't need this node.
+	 * 3. if the node is the right child of the stack's peek then remove the top. Which means traversing back from right sub tree.
+	 * 4. end of the look : start traversing right subtree.
+	 */
+	public static void postOrderTraversalMethod1(Node root){
+		if(root == null) return;
+		Stack<Node> stack = new Stack<>();
+		while(true){
+			// push all the left nodes to the stack.
+			while(root != null){
+				stack.push(root);
+				root = root.getLeft();
+			}
+			//pop the node, when the right is null, because we don't need this node.
+			if((!stack.isEmpty()) && stack.peek().getRight() == null){
+				root = stack.pop();
+				System.out.println(root);
+				//if the node is the right child of the stack's peek then remove the top. Which means traversing back from right sub tree.
+				while ((!stack.empty()) && stack.peek().getRight() !=null && stack.peek().getRight().getData() == root.getData()) {
+					root = stack.pop();
+					System.out.println(root);
+				}
+			}
+			
+			root = (stack.isEmpty()? null: stack.peek().getRight());
+			if(root == null && stack.isEmpty()){
+				break;
+			}			
+			
+		}
+		
 	}
 	
 	/**
@@ -73,7 +109,7 @@ public class Util {
 	 */
 	public static void postOrderTraversal(Node root){
 		if(root == null) return;
-		Stack stack = new Stack();
+		Stack<Node> stack = new Stack<>();
 		
 		while(true){
 			while(root != null){
@@ -85,9 +121,9 @@ public class Util {
 			}
 			if(stack.isEmpty())break;
 			
-			root =(Node)stack.pop();
+			root = stack.pop();
 			//check that, the item on stack is the right child root. then remove right child and push the root.
-			if((!stack.isEmpty()) && root.getRight() != null && (((Node)stack.peek()).getData() == root.getRight().getData())){
+			if((!stack.isEmpty()) && root.getRight() != null && (stack.peek().getData() == root.getRight().getData())){
 				stack.pop(); //remove right child
 				stack.push(root);
 				root = root.getRight();

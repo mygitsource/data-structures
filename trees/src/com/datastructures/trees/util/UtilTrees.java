@@ -37,8 +37,8 @@ public class UtilTrees {
 		node7.setLeft(node9);
 		node8.setRight(node10);
 		
-		Node test = new Node(100);
-		node9.setRight(test);
+//		Node test = new Node(100);
+//		node9.setRight(test);
 		return root;
 	}
 
@@ -200,6 +200,24 @@ public class UtilTrees {
 		return node12;
 		
 	}
-	
+
+	public static Node getBinaryTree6(){
+		Node node25 = new Node(25);
+		Node node12 = new Node(12);
+		Node node30 = new Node(30);
+		Node node10 = new Node(10);
+		Node node36 = new Node(36);
+		Node node15 = new Node(15);
+		
+		node10.setLeft(node12);
+		node10.setRight(node15);
+		
+		node12.setLeft(node25);
+		node12.setRight(node30);
+		node15.setLeft(node36);
+		
+		return node10;
+		
+	}
 	
 }

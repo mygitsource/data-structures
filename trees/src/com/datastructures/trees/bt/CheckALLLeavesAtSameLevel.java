@@ -5,8 +5,6 @@ import com.datastructures.trees.util.UtilTrees;
 
 public class CheckALLLeavesAtSameLevel {
 
-	
-		
 	/**
 	 * Given a Binary Tree, check if all leaves are at same level or not.
 	 * http://www.geeksforgeeks.org/check-leaves-level/

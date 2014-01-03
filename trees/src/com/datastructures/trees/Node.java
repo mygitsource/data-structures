@@ -8,6 +8,12 @@ For example, when looking at the root node of the tree,
 */
 public class Node {
 	
+	public Node(Node left, Integer data, Node right){
+		this.left = left;
+		this.data = data;
+		this.right = right;
+	}
+	
 	public Node(Integer data){
 		this.data = data;
 	}

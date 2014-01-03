@@ -4,7 +4,6 @@ public class LinkedList {
 	
 	private ListNode head = null;
 	private ListNode tail = null;
-	private ListNode temp = null;
 	
 	public void insertNode(ListNode node){
 		if(head == null && tail == null){
@@ -26,6 +25,10 @@ public class LinkedList {
 	
 	public ListNode getTail(){
 		return (tail == null? null:tail);
+	}
+
+	public void setHead(ListNode head){
+		this.head = head;
 	}
 
 }
