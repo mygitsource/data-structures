@@ -30,8 +30,8 @@ public class ReverseList {
 		ListNode temp = node.getNext();
 		System.out.println("t: "+temp+" N: "+node);
 		if(temp != null)
-			temp.setNext(node);
-		node.setNext(null);
+			temp.setNext(node);	
+		node.setNext(null);		//earlier next link
 	}
 
 	/*

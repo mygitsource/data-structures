@@ -2,12 +2,12 @@ package com.datastructures.list;
 
 public class ListNode {
 	
-	public ListNode(int data){
+	public ListNode(int data, ListNode next) {
 		this.data = data;
+		this.next = next;
 	}
 	
 	private int data = -1;
-	private ListNode prev = null;
 	private ListNode next = null;
 	
 	public int getData() {
@@ -15,12 +15,6 @@ public class ListNode {
 	}
 	public void setData(int data) {
 		this.data = data;
-	}
-	public ListNode getPrev() {
-		return prev;
-	}
-	public void setPrev(ListNode prev) {
-		this.prev = prev;
 	}
 	public ListNode getNext() {
 		return next;

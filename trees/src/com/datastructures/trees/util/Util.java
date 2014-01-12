@@ -182,9 +182,13 @@ public class Util {
 	public static void printList(LinkedList node){
 		ListNode temp = node.getHead();
 		while(temp != null){
-			System.out.println(temp);
+			System.out.print(temp);
 			temp = temp.getNext();
+			if(temp != null){
+				System.out.print("->");
+			}
 		}
+		System.out.println("\n");
 	}
 	
 	public static void printTree(Node node, Traversal traversal){
