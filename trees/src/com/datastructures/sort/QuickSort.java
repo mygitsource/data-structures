@@ -10,7 +10,11 @@ public class QuickSort {
 		}
 		
 	}
-	
+	/*
+	 * lets say pivot is end element,
+	 * traverse the array and if the value is lessthen the pivot, 
+	 * move the value the start of the array and increment the starting position (pIndex). 
+	 */
 	private int partition(int[] array, int startIdx, int endIdx){
 		//can be any element , lets say start element
 	 	int pivot = array[endIdx];		

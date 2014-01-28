@@ -48,22 +48,26 @@ public class MergeTwoLinkedLists {
 	
 	public static void main(String[] args) {
 		LinkedList list1 = new LinkedList();
-		list1.insertNode(1);
-		list1.insertNode(3);
-		list1.insertNode(5);
-		list1.insertNode(7);
+		list1.insertNode(list1.getHead(),1);
+		list1.insertNode(list1.getHead(),3);
+		list1.insertNode(list1.getHead(),5);
+		list1.insertNode(list1.getHead(),7);
 		LinkedList list2 = new LinkedList();
-		list2.insertNode(2);
-		list2.insertNode(4);
-		list2.insertNode(6);
-		list2.insertNode(8);
-		list2.insertNode(10);
-		list2.insertNode(12);
+		list2.insertNode(list2.getHead(),2);
+		list2.insertNode(list2.getHead(),4);
+		list2.insertNode(list2.getHead(),6);
+		list2.insertNode(list2.getHead(),8);
+		list2.insertNode(list2.getHead(),10);
+		list2.insertNode(list2.getHead(),12);
+		System.out.print("list 1: ");
 		Util.printList(list1);
+		System.out.print("list 2: ");
 		Util.printList(list2);
 		MergeTwoLinkedLists lists = new MergeTwoLinkedLists();
 		lists.mergeTwoLinkedLists(list1, list2);
+		System.out.print("list 1: ");
 		Util.printList(list1);
+		System.out.print("list 2: ");
 		Util.printList(list2);
 	}
 }

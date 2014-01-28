@@ -1,33 +1,47 @@
 package com.datastructures.list;
 
+import com.datastructures.trees.util.Util;
+
 public class LinkedList {
 	
 	private ListNode head = null;
-	private ListNode tail = null;
+	
+	//insert at begining
+	public void insertNode(ListNode head, int data){
+		ListNode node = new ListNode(data, head);
+		this.head = node;
+	}
 
-	//TODO make this as insert at head
-	//this is insert at end
 	public void insertNode(int data){
-		ListNode node = new ListNode(data, null);
-		if(head == null && tail == null){
-			head = node;
-			tail = node;
-		}else{
-			tail.setNext(node);
-			tail = node;
+		ListNode node = new ListNode(data, head);
+		this.head = node;
+	}
+
+	public ListNode getTail(){
+		ListNode currNode = head;
+		while(currNode != null && currNode.getNext() != null){
+			currNode = currNode.getNext();
 		}
+		return currNode;
 	}
 	
 	public ListNode getHead(){
 		return (head == null? null:head);
 	}
 	
-	public ListNode getTail(){
-		return (tail == null? null:tail);
-	}
-
 	public void setHead(ListNode head){
 		this.head = head;
 	}
 
+	public static void main(String[] args) {
+		LinkedList list = new LinkedList();
+		list.insertNode(list.getHead(), 10);
+		list.insertNode(list.getHead(), 20);
+		list.insertNode(list.getHead(), 30);
+		list.insertNode(list.getHead(), 40);
+		list.insertNode(list.getHead(), 50);
+		list.insertNode(list.getHead(), 60);
+		Util.printList(list);
+		
+	}
 }

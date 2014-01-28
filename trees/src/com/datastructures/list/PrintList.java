@@ -17,12 +17,12 @@ public class PrintList {
 	
 	public static void main(String[] args) {
 		LinkedList linkedList = new LinkedList();
-		linkedList.insertNode(1);
-		linkedList.insertNode(2);
-		linkedList.insertNode(3);
-		linkedList.insertNode(4);
-		linkedList.insertNode(5);
-		linkedList.insertNode(6);
+		linkedList.insertNode(linkedList.getHead(),1);
+		linkedList.insertNode(linkedList.getHead(),2);
+		linkedList.insertNode(linkedList.getHead(),3);
+		linkedList.insertNode(linkedList.getHead(),4);
+		linkedList.insertNode(linkedList.getHead(),5);
+		linkedList.insertNode(linkedList.getHead(),6);
 		printRecursively(linkedList.getHead());
 		System.out.println("**************");
 		printReverseRecursively(linkedList.getHead());
