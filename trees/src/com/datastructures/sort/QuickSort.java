@@ -17,7 +17,7 @@ public class QuickSort {
 	 */
 	private int partition(int[] array, int startIdx, int endIdx){
 		//can be any element , lets say start element
-	 	int pivot = array[endIdx];		
+	 	int pivot = array[endIdx];
 	 	//partition index = start index
 	    int pIndex = startIdx;			
 	 
