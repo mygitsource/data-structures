@@ -191,16 +191,28 @@ public class Util {
 		System.out.println("\n");
 	}
 	
+	public static void printInOrderTraversal(Node node){
+		printTree(node, Traversal.INORDER);
+		System.out.println();
+	}
+	public static void printPostOrderTraversal(Node node){
+		printTree(node, Traversal.POSTORDER);
+		System.out.println();
+	}
+	public static void printPreOrderTraversal(Node node){
+		printTree(node, Traversal.PREORDER);
+		System.out.println();
+	}
 	public static void printTree(Node node, Traversal traversal){
 		if(node == null) return;
 		if(traversal == Traversal.PREORDER)
-			System.out.println(node.getData());
+			System.out.print(node.getData()+" ");
 		printTree(node.getLeft(), traversal);
 		if(traversal == Traversal.INORDER)		
-			System.out.println(node.getData());
+			System.out.print(node.getData()+" ");
 		printTree(node.getRight(), traversal);
 		if(traversal == Traversal.POSTORDER)
-			System.out.println(node.getData());
+			System.out.print(node.getData()+" ");
 	}
 	
 	public static  int height(Node node){
@@ -226,7 +238,7 @@ public class Util {
 		queue.add(node);
 		while(!queue.isEmpty()){
 			Node temp = queue.poll();
-			System.out.println(temp.getData());
+			System.out.print(temp.getData()+" ");
 			if(temp.getLeft() != null){
 				queue.add(temp.getLeft());
 			}
@@ -234,6 +246,7 @@ public class Util {
 				queue.add(temp.getRight());
 			}
 		}
+		System.out.println();
 	}
 	
 	/**

@@ -11,7 +11,28 @@ public class LinkedList {
 		ListNode node = new ListNode(data, head);
 		this.head = node;
 	}
-
+	
+	public void insertAt(int data, ListNode node){
+		if(node == null){
+			ListNode nNode = new ListNode(data, null);
+			head = node;
+		}else {
+			ListNode next = node.getNext();
+			ListNode nNode = new ListNode(data, next);
+			node.setNext(nNode);
+		}
+	}
+	
+	public void addNext(int data){
+		if(head == null){
+		 insertNode(data);
+		}else{
+		ListNode tail = getTail();
+		ListNode node = new ListNode(data, null);
+		tail.setNext(node);
+		}
+	}
+	
 	public void insertNode(int data){
 		ListNode node = new ListNode(data, head);
 		this.head = node;
@@ -19,7 +40,7 @@ public class LinkedList {
 
 	public ListNode getTail(){
 		ListNode currNode = head;
-		while(currNode != null && currNode.getNext() != null){
+		while(currNode.getNext() != null){
 			currNode = currNode.getNext();
 		}
 		return currNode;

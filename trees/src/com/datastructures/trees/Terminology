@@ -1,0 +1,35 @@
+The tree elements are called "nodes". 
+The lines connecting elements are called "branches". 
+Nodes without children are called leaf nodes, "end-nodes", or "leaves".
+
+Every finite tree structure has a member that has no superior. This member is called the "root" or root node. 
+The root is the starting node. But the converse is not true: infinite tree structures may or may not have a root node.
+
+the term "uncle" is still used for other nodes at the same level as the parent.
+"Sibling" ("brother" or "sister") nodes share the same parent node.
+
+A node's "uncles" are siblings of that node's parent.
+A node that is connected to all lower-level nodes is called an "ancestor". The connected lower-level nodes are "descendants" of the ancestor node.
+
+
+Ancestor of a node v: Any node, including v itself, on the path from the root to the node
+Proper ancestor of a node v: Any node, excluding v, on the path from the root to the node
+
+
+Descendant of a node v: Any node, including v itself, on any path from the node to a leaf node (i.e., a node with no children)
+Proper descendant of a node v: Any node, excluding v, on any path from the node to a leaf node
+
+Siblings: Nodes that have the same parent
+
+Degree: The number of subtrees of a node
+
+Leaf: A node with degree 0
+Internalor interior node: a node with degree greater than 0
+
+Level (or depth) of a node v: The length of the path from the root to v.
+Height of a node v: The length of the longest path from v to a leaf node.
+The height of a tree is the height of its root mode.
+By definition the height of an empty tree is -1
+
+N ary follows that the degree of each node in an N-ary tree is at most N
+
