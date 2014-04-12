@@ -2,7 +2,7 @@ package com.datastructures.trees.bt;
 
 import com.datastructures.trees.Node;
 
-public class StructurallyIdemtical {
+public class StructurallyIdentical {
 
 	private static boolean isIdentical(Node n1, Node n2){
 		//first end condition then OR condition

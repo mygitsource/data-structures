@@ -3,8 +3,9 @@ package com.datastructures.trees.bst;
 import com.datastructures.trees.Node;
 import com.datastructures.trees.util.UtilTrees;
 
-public class LowestCommonAncestorInABinarySearchTree {
-
+//binary search tree
+public class LowestORLeastCommonAncestorInABinarySearchTree {
+	
 	static Node lowestCommonAncestor(Node root, int n1, int n2){
 		if(root == null) return null;
 		

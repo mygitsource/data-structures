@@ -7,8 +7,11 @@ import com.datastructures.trees.util.Util;
 /**
  * Constructing a binary tree from inorder and preorder.
  * 
- * @author ravi
- *
+ * 1. Select an element from preOrder and increment the preIndex.
+ * 2. create a new node with the selected node data.
+ * 3. find the selected element index in inorder sequence.
+ * 4. build recursively using before index and after index. 
+ *  
  */
 public class BuildBinaryTreeFromInAndPreOrder {
 

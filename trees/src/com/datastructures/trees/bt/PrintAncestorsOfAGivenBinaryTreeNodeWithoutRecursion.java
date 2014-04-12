@@ -66,7 +66,7 @@ public class PrintAncestorsOfAGivenBinaryTreeNodeWithoutRecursion {
 	}
 	
 	public static void main(String[] args) {
-		Node root = UtilTrees.getBinaryTree3();
-		printAncestorsOfAGivenBinaryTreeNodeWithoutRecursion(root, 11);
+		Node root = UtilTrees.getBinaryTree1();
+		printAncestorsOfAGivenBinaryTreeNodeWithoutRecursion(root, 7);
 	}
 }
