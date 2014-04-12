@@ -6,6 +6,7 @@ import java.util.Queue;
 import com.datastructures.trees.Node;
 import com.datastructures.trees.util.UtilTrees;
 
+@Deprecated
 public class DeepestLeftLeafNode {
 	
 	public static void main(String[] args) {

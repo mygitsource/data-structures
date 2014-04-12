@@ -53,14 +53,14 @@ public class ReverseLinkedListInPairs {
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
-		list.insertNode(10);
-		list.insertNode(20);
-		list.insertNode(30);
-		list.insertNode(40);
-		list.insertNode(50);
-		list.insertNode(60);
-		list.insertNode(70);
-		list.insertNode(80);
+		list.insertNode(list.getHead(),10);
+		list.insertNode(list.getHead(),20);
+		list.insertNode(list.getHead(),30);
+		list.insertNode(list.getHead(),40);
+		list.insertNode(list.getHead(),50);
+		list.insertNode(list.getHead(),60);
+		list.insertNode(list.getHead(),70);
+		list.insertNode(list.getHead(),80);
 		
 		Util.printList(list);
 		

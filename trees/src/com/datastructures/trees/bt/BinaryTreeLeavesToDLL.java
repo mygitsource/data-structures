@@ -22,7 +22,7 @@ public class BinaryTreeLeavesToDLL {
 		if(node == null || list == null) return null;
 		
 		if(node.getLeft() == null && node.getRight() == null){
-			list.insertNode(node.getData());
+			list.insertNode(list.getHead(), node.getData());
 			
 			if(parent.getLeft() != null && parent.getLeft().getData() == node.getData()){
 				parent.setLeft(null);

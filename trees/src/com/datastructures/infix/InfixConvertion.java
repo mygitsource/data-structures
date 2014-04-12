@@ -9,7 +9,7 @@ public class InfixConvertion {
 /**
  * 
  * The most straightforward method is to start by inserting all the implicit brackets that show the order of evaluation e.g.:
-	Infix	Postfix	Prefix
+	Infix					Postfix					Prefix
 	((A * B) + (C / D) ) 	( (A B *) (C D /) +) 	(+ (* A B) (/ C D) )
 	((A * (B + C) ) / D) 	( (A (B C +) *) D /) 	(/ (* A (+ B C) ) D)
 	( A * (B + (C / D) ) ) 	(A (B (C D /) +) *) 	(* A (+ B (/ C D) ) )
@@ -63,7 +63,7 @@ public class InfixConvertion {
 				}
 				stack.push(exp.charAt(0));
 			}else if( OperatorUtil.isOpeningParentheses(exp.charAt(0))){
-				//if it opeing parenthese append all the operators from stack 
+				//if it opening parenthese append all the operators from stack 
 				//till the top of the stack is closing parentheses.
 
 				while(!stack.empty() && !OperatorUtil.isClosingParentheses(stack.peek())){

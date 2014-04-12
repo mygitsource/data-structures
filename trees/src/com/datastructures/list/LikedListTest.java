@@ -6,10 +6,13 @@ public class LikedListTest {
 		LinkedList list = getLinkedList1();
 		ListNode temp = list.getHead();
 		while(temp != null){
-			System.out.println(temp);
+			System.out.print(temp);
 			temp = temp.getNext();
+			if(temp != null){
+				System.out.print("->");
+			}
 		}
-		
+		System.out.print("\n");
 	}
 	
 	
@@ -17,7 +20,7 @@ public class LikedListTest {
 		LinkedList likedList  = new LinkedList();
 		for (int i = 0; i < 10; i++) {
 			//ListNode x = new ListNode(i);
-			likedList.insertNode(i);
+			likedList.insertNode(likedList.getHead(),i);
 		}
 		return likedList;
 	}
