@@ -30,7 +30,7 @@ public class PrintAncestorsOfAGivenBinaryTreeNodeWithoutRecursion {
 		if(node == null) return;
 		Stack<Node> stack = new Stack<>();
 		while (true) {
-			//push all the leftnodes to the stack.
+			//push all the left nodes to the stack.
 			while (node != null && node.getData() != key) {
 				stack.push(node);
 				node = node.getLeft();
@@ -39,7 +39,7 @@ public class PrintAncestorsOfAGivenBinaryTreeNodeWithoutRecursion {
 				break;
 			}
 			
-			//pop the node , when the right is null, becaus we don't need this node.
+			//pop the node , when the right is null, because we don't need this node.
 			if((!stack.isEmpty()) && stack.peek().getRight() == null ){
 				node = stack.pop();
 				

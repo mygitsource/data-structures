@@ -12,12 +12,14 @@ public class TreeIsomorphism {
 		if(n1 == null && n2 == null) return true;
 		if(n1 == null || n2 == null) return false;
 		
-		if(!(n1.getData() == n2.getData())){
+		if(n1.getData() != n2.getData()){
 			return false;
 		}
 		
 		return ((isIsomorphoic(n1.getLeft(), n2.getRight()) && isIsomorphoic(n1.getRight(), n2.getLeft())));
-		
+
+//		return ((n1.getData() == n2.getData()) && (isIsomorphoic(n1.getLeft(), n2.getRight()) && isIsomorphoic(n1.getRight(), n2.getLeft())));
+
 /*		we shouldn't check left/left and right/right 
  * 	return ((isIsomorphoic(n1.getLeft(), n2.getLeft()) && isIsomorphoic(n1.getRight(), n2.getRight())) ||
 				(isIsomorphoic(n1.getLeft(), n2.getRight()) && isIsomorphoic(n1.getRight(), n2.getLeft())));

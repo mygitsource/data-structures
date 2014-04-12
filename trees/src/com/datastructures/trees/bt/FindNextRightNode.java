@@ -16,8 +16,8 @@ public class FindNextRightNode {
 	//TODO: BFS or DFS
 	
 	public static void main(String[] args) {
-		Node node = UtilTrees.getBinaryTree1();
-		Node val = findNextRightNode_LevelOrder(node, 5);
+		Node node = UtilTrees.getBinaryTree2();
+		Node val = findNextRightNode_LevelOrder(node, 9);
 		System.out.println(val);
 	}
 	

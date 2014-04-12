@@ -20,7 +20,8 @@ public class ReverseLinkedListInPairs {
 	prev.next = next.next
 	prev = next
 	current = prev.next
-*/	void reverseLinkedListInPairs(LinkedList list){
+*/	
+	void reverseLinkedListInPairs(LinkedList list){
 		ListNode head = list.getHead();
 		//empty or single node list
 		if(head == null || head.getNext() == null) return;

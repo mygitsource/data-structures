@@ -6,7 +6,7 @@ public class QuickSort {
 		if(startIdx < endIdx){		// or if(startIdx >=endIdx) return;
 			int pIndex = partition(array, startIdx, endIdx);
 			quickSort(array, startIdx, pIndex-1);  // sub array start to pindex-1		
-			quickSort(array, pIndex+1, endIdx);   //sub arrat start to pindex+1
+			quickSort(array, pIndex+1, endIdx);   //sub arrat pindex+1 to end
 		}
 		
 	}

@@ -6,7 +6,6 @@ import java.util.Queue;
 import com.datastructures.trees.Node;
 import com.datastructures.trees.util.Util;
 import com.datastructures.trees.util.UtilTrees;
-import com.sun.media.sound.MidiUtils.TempoCache;
 
 
 public class HeightOfBinaryTree {
@@ -45,7 +44,6 @@ public class HeightOfBinaryTree {
 	
 	public static void main(String[] args) {
 		System.out.println(heightOfTreeIterative(UtilTrees.getBinaryTree1()));
-		System.out.println(Util.height(UtilTrees.getBinaryTree1()));
 		System.out.println(height(UtilTrees.getBinaryTree1()));
 	}
 	

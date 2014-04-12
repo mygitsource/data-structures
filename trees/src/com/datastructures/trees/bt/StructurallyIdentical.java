@@ -9,7 +9,13 @@ public class StructurallyIdentical {
 		if(n1 == null && n2 == null) return true;
 		if(n1 == null || n2 == null) return false;
 		
-		return ((n1.getData() == n2.getData()) && (isIdentical(n1.getLeft(), n2.getLeft()) && isIdentical(n1.getRight(), n2.getRight())));
+		if((n1.getData() != n2.getData())){
+			return false;
+		}
+		return ((isIdentical(n1.getLeft(), n2.getLeft()) && isIdentical(n1.getRight(), n2.getRight())));
+
+//		return ((n1.getData() == n2.getData()) && (isIdentical(n1.getLeft(), n2.getLeft()) && isIdentical(n1.getRight(), n2.getRight())));
+
 	}
 	
 	

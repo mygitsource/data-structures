@@ -10,10 +10,10 @@ import com.datastructures.trees.util.UtilTrees;
 public class DeepestLeftLeafNode {
 	
 	public static void main(String[] args) {
-		inorderTraversalMethod();
+//		inorderTraversalMethod();
 		
 		//levelorder traversal is not finished.
-		//levelOrderTraversalMethod();
+		levelOrderTraversalMethod();
 		
 	}
 	
@@ -40,8 +40,9 @@ public class DeepestLeftLeafNode {
 		Queue<Node> queue = new LinkedList<>();
 		queue.add(node);
 		queue.add(null);
+		Node temp = null;
 		while(!queue.isEmpty()){
-			Node temp = queue.poll();
+			temp = queue.poll();
 			//System.out.println(temp.getData());
 			if(temp == null){
 				//increment level , when temp.data == null, which was inserted as end of level.
@@ -51,21 +52,23 @@ public class DeepestLeftLeafNode {
 			}else{
 				if(temp.getLeft() != null){
 					queue.add(temp.getLeft());
-				}else if(temp.getRight() == null){
-					//when right is null check the level and keep the node value. 
-					if(level >= maxLevel){
-						maxLevel = level;
-						value = temp.getData();
-					}
 				}
 				if(temp.getRight() != null){
 					queue.add(temp.getRight());
 				}
 			}
 			
+			if(temp != null){
+				//when right is null check the level and keep the node value. 
+				if(level > maxLevel){
+					maxLevel = level;
+					value = temp.getData();
+				}
+			}
+			
 		}
 		System.err.println(value);
-		return null;
+		return temp;
 	}
 	
 	
@@ -81,7 +84,7 @@ public class DeepestLeftLeafNode {
 	}
 	
 	/**
-	 * Get deepest leftnode of the tree. Do inorder traversal of the given tree.
+	 * Get deepest left node of the tree. Do inorder traversal of the given tree.
 	 * check for each leave and check if the node isleft and there is no left node.
 	 * keep that node value in variable.   
 	 */
@@ -95,9 +98,10 @@ public class DeepestLeftLeafNode {
 			value = node;
 		}
 		if(node.getLeft() != null)
-		temp1 = inorderTraversalMethod(node.getLeft(), true, level+1, maxLevel);
+			temp1 = inorderTraversalMethod(node.getLeft(), true, level+1, maxLevel);
+		
 		if(node.getRight() != null)
-		temp2 = inorderTraversalMethod(node.getRight(), false, level+1, maxLevel);
+			temp2 = inorderTraversalMethod(node.getRight(), false, level+1, maxLevel);
 		
 		if(temp2 != null)
 			value = temp2;

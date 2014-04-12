@@ -24,7 +24,7 @@ public class BinaryTreeSumAndDeleteLeaf {
 		root.setLeft(sumAndDelete(root.getLeft(), k, lsum));
 		root.setRight(sumAndDelete(root.getRight(), k, rsum));
 
-		sum = (lsum > rsum?rsum:lsum);
+		sum = (lsum > rsum?rsum:lsum); // check this..
 		if(root.getLeft() == null && root.getRight()== null && sum < k){
 //			System.err.println("S: "+sum+" "+root.getData());
 			root = null;
