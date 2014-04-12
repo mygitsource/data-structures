@@ -117,6 +117,22 @@ public class DoubleLinkedList {
 		}
 	}
 	
+	public void setSize(int size){
+		this.size = size;
+	}
+	
+	public int getSize(){
+		return size;
+	}
+	
+	public void SetHead(DLLNode head){
+		this.first = head;
+	}
+	
+	public DLLNode getHead(){
+		return first;
+	}
+	
 	public static void main(String[] args) {
 		DoubleLinkedList list = new DoubleLinkedList();
 		list.insertLast(5);

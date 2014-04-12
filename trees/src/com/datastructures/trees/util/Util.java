@@ -10,12 +10,13 @@ import com.datastructures.trees.Traversal;
 
 public class Util {
 	
-	public static void main(String[] args) {
-//		postOrderTraversalMethod1(UtilTrees.getBinaryTree1());	
-		postOrderTraversal(UtilTrees.getBinaryTree1());
+/*	public static void main(String[] args) {
+		postOrderTraversalMethod1(UtilTrees.getBinaryTree1());	
+//		postOrderTraversalTwoStack(UtilTrees.getBinaryTree1());
+//		postOrderTraversal(UtilTrees.getBinaryTree1());
 //		printTree(UtilTrees.getBinaryTree1(), Traversal.POSTORDER);
 	}
-	
+*/	
 	public static void postOrderTraversalTwoStack(Node root){
 		Stack stack1 = new Stack<>();
 		Stack stack2 = new Stack<>();
@@ -177,10 +178,9 @@ public class Util {
 			root = root.getRight();
 		}
 	}
-	
-	
-	public static void printList(LinkedList node){
-		ListNode temp = node.getHead();
+
+	public static void printListNode(ListNode head){
+		ListNode temp = head;
 		while(temp != null){
 			System.out.print(temp);
 			temp = temp.getNext();
@@ -189,6 +189,11 @@ public class Util {
 			}
 		}
 		System.out.println("\n");
+	}
+	
+	
+	public static void printList(LinkedList node){
+		printListNode(node.getHead());
 	}
 	
 	public static void printTree(Node node, Traversal traversal){
@@ -265,5 +270,46 @@ public class Util {
 
 	}
 
+
+	public static int size(LinkedList list){
+		return size(list.getHead());
+	}
+	
+	public static int size(ListNode node){
+		int size = 0;
+		ListNode tmp = node;
+		while(tmp != null){
+			tmp = tmp.getNext();
+			size += 1;
+		}
+		return size;
+	}
+	
+	public static int sizeOfBinaryTree(Node root){
+		if(root == null) return 0;
+		return (sizeOfBinaryTree(root.getLeft()) + 1 + sizeOfBinaryTree(root.getRight()));
+	}
+
+	static int diameter = 0;
+	public static int getDiameter(Node node){
+		int left, right;
+		if(node == null) return 0;
+		
+		left = getDiameter(node.getLeft());
+		right = getDiameter(node.getRight());
+		
+		if((left + right) > diameter){
+			diameter = left+right+1;
+		}
+		return Math.max(left, right)+1;
+	}
+
+	public static void main(String[] args) {
+		int val = getDiameter(UtilTrees.getBinaryTree3());
+	System.out.println(diameter);
+//		System.out.println(diameter(UtilTrees.getBinaryTree1())+" "+maxNum);
+		
+		
+	}
 	
 }

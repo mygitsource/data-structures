@@ -5,7 +5,9 @@ import java.util.Stack;
 public class ParenthesesCheck {
 
 	private static final String OPENING_PARENTHESES = "({[";
-	private static final String CLOSEING_PARENTHESES = "]})";
+//	private static final String CLOSEING_PARENTHESES = "]})";
+	private static final String CLOSEING_PARENTHESES = ")}]";
+
 	
 	private static boolean isParenthesesBalanced(String expression){
 		int length = expression.length();

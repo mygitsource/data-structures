@@ -4,7 +4,7 @@ public class LinkedList {
 	
 	private ListNode head = null;
 	private ListNode tail = null;
-
+	
 	//TODO make this as insert at head
 	//this is insert at end
 	public void insertNode(int data){
@@ -13,8 +13,20 @@ public class LinkedList {
 			head = node;
 			tail = node;
 		}else{
-			tail.setNext(node);
+			if(tail !=null)
+				tail.setNext(node);
 			tail = node;
+		}
+	}
+	
+	public void insertAtBegin(int data){
+		ListNode node = new ListNode(data, null);
+		if(head == null){
+			head = node;
+		}else{
+			ListNode tmp = head;
+			head = node;
+			node.setNext(tmp);
 		}
 	}
 	

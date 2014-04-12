@@ -2,6 +2,11 @@ package com.datastructures.list;
 
 public class ListNode {
 	
+	public ListNode(){
+	}
+	public ListNode(int data){
+		this.data = data;
+	}
 	public ListNode(int data, ListNode next) {
 		this.data = data;
 		this.next = next;

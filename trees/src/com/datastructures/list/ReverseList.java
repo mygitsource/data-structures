@@ -19,6 +19,7 @@ public class ReverseList {
 		}
 		linkedList.setHead(prev);
 	}
+	
 	private static ListNode head = null;
 	private static void reverseUsingRecursion(ListNode node){
 		if(node == null)return;
@@ -34,6 +35,7 @@ public class ReverseList {
 		node.setNext(null);		//earlier next link
 	}
 
+	
 	/*
 	 * 6 next =5
 	 * 5 next =4
@@ -52,15 +54,16 @@ public class ReverseList {
 		linkedList.insertNode(4);
 		linkedList.insertNode(5);
 		linkedList.insertNode(6);
-//		Util.printList(linkedList);
+		Util.printList(linkedList);
 //		reverse(linkedList);
 //		System.out.println("*********************");
 //		Util.printList(linkedList);
 		reverseUsingRecursion(linkedList.getHead());
-		ListNode temp = head;
+		Util.printListNode(head);
+/*		ListNode temp = head;
 		while (temp != null) {
 			System.out.println(temp);
 			temp = temp.getNext();
 		}
-	}
+*/	}
 }

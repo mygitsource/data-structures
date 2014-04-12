@@ -11,12 +11,17 @@ public class FindDepthOfTheDeepestOddLevelNode {
 	public static int findDepthOfTheDeepestOddLevelNode(Node node, int level){
 		if(node == null) return 0;
 		
-		if(node.getLeft() == null){
-			if((level%2 ==1) && (level > leafLevel)){
+//		if(node.getLeft() == null){
+//			if((level%2 ==1) && (level > leafLevel)){
+//				leafLevel = level;
+//				leafNode = node;
+//				System.out.println("Leaf Leavel :"+leafLevel);
+//			}
+//		}
+		if((node.getLeft() == null) && (node.getRight() == null) && (level%2 == 1) && (level > leafLevel)){
 				leafLevel = level;
 				leafNode = node;
 				System.out.println("Leaf Leavel :"+leafLevel);
-			}
 		}
 		findDepthOfTheDeepestOddLevelNode(node.getLeft(), level+1);
 		findDepthOfTheDeepestOddLevelNode(node.getRight(), level+1);
@@ -25,7 +30,7 @@ public class FindDepthOfTheDeepestOddLevelNode {
 	}
 	
 	public static void main(String[] args) {
-		Node root = UtilTrees.getBinaryTree1();
+		Node root = UtilTrees.getBinaryTree3();
 		int data = findDepthOfTheDeepestOddLevelNode(root, 1);
 		System.out.println(data);
 	}
