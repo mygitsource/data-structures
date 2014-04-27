@@ -1,5 +1,17 @@
 package com.datastructures.sort;
 
+/*
+ * 1)  Start with list I of n items
+2)  Choose pivot v from I
+3)  Partition I into 2 unsorted lists I1 and I2 such that
+        I1 : all keys smaller than pivot
+        I2 : all keys larger than pivot
+        Items same as pivot goes to either list
+4)  Sort I1 recursively, yielding sorted list S1
+5)  Sort I2 recursively, yielding sorted list S2
+6)  Concatenate S1,v,S2 yielding sorted list S
+ */
+
 public class QuickSort {
 
 	private void quickSort(int[] array, int startIdx, int endIdx ){

@@ -191,13 +191,10 @@ public class Util {
 		System.out.println("\n");
 	}
 	
-<<<<<<< HEAD
-	
 	public static void printList(LinkedList node){
 		printListNode(node.getHead());
 	}
 	
-=======
 	public static void printInOrderTraversal(Node node){
 		printTree(node, Traversal.INORDER);
 		System.out.println();
@@ -210,7 +207,7 @@ public class Util {
 		printTree(node, Traversal.PREORDER);
 		System.out.println();
 	}
->>>>>>> 51908d69876229a973d30d7327c81de686eca44d
+	
 	public static void printTree(Node node, Traversal traversal){
 		if(node == null) return;
 		if(traversal == Traversal.PREORDER)

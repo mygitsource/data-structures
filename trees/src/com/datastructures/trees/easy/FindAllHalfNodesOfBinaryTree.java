@@ -8,20 +8,20 @@ import com.datastructures.trees.util.UtilTrees;
 
 public class FindAllHalfNodesOfBinaryTree {
 
-	static void findAllHalfNodes(Node root){
+	static void findAllHalfNodesRecursion(Node root){
 		if(root == null) return ;
 		
 		if((root.getLeft() == null && root.getRight() != null)||(root.getLeft() != null && root.getRight() == null)){
 			System.out.print(root.getData()+" ");
 		}
 		
-		findAllHalfNodes(root.getLeft());
-		findAllHalfNodes(root.getRight());
+		findAllHalfNodesRecursion(root.getLeft());
+		findAllHalfNodesRecursion(root.getRight());
 		
 		return;
 	} 
 	
-	static void findALLHalfNodesRecursion(Node root){
+	static void findALLHalfNodes(Node root){
 		if(root == null) return;
 		Node temp = null;
 		Queue<Node> queue = new LinkedList<>();
@@ -44,8 +44,8 @@ public class FindAllHalfNodesOfBinaryTree {
 	}
 	
 	public static void main(String[] args) {
-		findAllHalfNodes(UtilTrees.getBinaryTree4());
+		findAllHalfNodesRecursion(UtilTrees.getBinaryTree4());
 		System.out.println();
-		findALLHalfNodesRecursion(UtilTrees.getBinaryTree4());
+		findALLHalfNodes(UtilTrees.getBinaryTree4());
 	}
 }

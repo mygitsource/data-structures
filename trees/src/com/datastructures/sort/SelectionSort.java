@@ -4,6 +4,8 @@ public class SelectionSort{
 	
 	//Selection sort uses n^2/2 comparisons and n exchanges to sort an array of length N.
 	//ALL : o(n^2)
+	
+	// find min and swap the elements
     public static void selectionSort(Comparable[] array) {
         int size = array.length;
         for (int i = 0; i < size; i++) {
